@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres
   resources :publishers
   resources :authors
   get 'home/index'
