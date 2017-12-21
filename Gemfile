@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'devise'
-gem 'paperclip', '~> 5.0'
+gem 'paperclip', '~> 5.1'
 gem 'omniauth-facebook'
 
 group :development, :test do

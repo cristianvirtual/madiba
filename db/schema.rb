@@ -10,11 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221140443) do
+ActiveRecord::Schema.define(version: 20171221154012) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.boolean "active"
+    t.datetime "photo_updated_at"
+    t.integer "photo_file_size"
+    t.string "photo_content_type"
+    t.string "photo_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
