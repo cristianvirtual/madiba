@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'I do nothing :p'
+puts 'You have to load seeds by type. New options:'
+
+Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].each do |filename|
+  task_name = File.basename(filename, '.rb').intern
+  puts "rails db:seed:#{task_name}"
+end
