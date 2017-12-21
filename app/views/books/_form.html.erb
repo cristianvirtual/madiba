@@ -1,0 +1,82 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :book_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn, id: :book_isbn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id %>
+    <%= form.text_field :author_id, id: :book_author_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre_id %>
+    <%= form.text_field :genre_id, id: :book_genre_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publisher_id %>
+    <%= form.text_field :publisher_id, id: :book_publisher_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :book_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serie_title %>
+    <%= form.text_field :serie_title, id: :book_serie_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :volume %>
+    <%= form.number_field :volume, id: :book_volume %>
+  </div>
+
+  <div class="field">
+    <%= form.label :edition %>
+    <%= form.number_field :edition, id: :book_edition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publication_year %>
+    <%= form.number_field :publication_year, id: :book_publication_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pages %>
+    <%= form.number_field :pages, id: :book_pages %>
+  </div>
+
+  <div class="field">
+    <%= form.label :abstract %>
+    <%= form.text_area :abstract, id: :book_abstract %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active %>
+    <%= form.check_box :active, id: :book_active %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

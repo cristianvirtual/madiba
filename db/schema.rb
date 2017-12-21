@@ -10,13 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221133343) do
+ActiveRecord::Schema.define(version: 20171221140443) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "code", null: false
+    t.string "isbn"
+    t.bigint "author_id"
+    t.bigint "genre_id"
+    t.bigint "publisher_id"
+    t.string "title"
+    t.string "serie_title"
+    t.integer "volume"
+    t.integer "edition"
+    t.integer "publication_year"
+    t.integer "pages"
+    t.text "abstract"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["code"], name: "index_books_on_code"
+    t.index ["genre_id"], name: "index_books_on_genre_id"
+    t.index ["isbn"], name: "index_books_on_isbn"
+    t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
   create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,4 +82,7 @@ ActiveRecord::Schema.define(version: 20171221133343) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "genres"
+  add_foreign_key "books", "publishers"
 end
