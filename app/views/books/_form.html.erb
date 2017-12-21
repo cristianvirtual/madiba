@@ -1,4 +1,4 @@
-<%= form_with(model: book, local: true) do |form| %>
+<%= form_with(model: book, local: true, html: { multipart: true }) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
@@ -17,23 +17,28 @@
   </div>
 
   <div class="field">
+    <%= form.label :cover %>
+    <%= form.file_field :cover %>
+  </div>
+
+  <div class="field">
     <%= form.label :isbn %>
     <%= form.text_field :isbn, id: :book_isbn %>
   </div>
 
   <div class="field">
     <%= form.label :author_id %>
-    <%= form.text_field :author_id, id: :book_author_id %>
+    <%= form.collection_select :author_id, Author.active, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :genre_id %>
-    <%= form.text_field :genre_id, id: :book_genre_id %>
+    <%= form.collection_select :genre_id, Genre.active, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :publisher_id %>
-    <%= form.text_field :publisher_id, id: :book_publisher_id %>
+    <%= form.collection_select :publisher_id, Publisher.active, :id, :name %>
   </div>
 
   <div class="field">

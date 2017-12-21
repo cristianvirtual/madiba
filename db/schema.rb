@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221154012) do
+ActiveRecord::Schema.define(version: 20171221191110) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 20171221154012) do
     t.integer "pages"
     t.text "abstract"
     t.boolean "active"
+    t.datetime "cover_updated_at"
+    t.integer "cover_file_size"
+    t.string "cover_content_type"
+    t.string "cover_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_books_on_author_id"

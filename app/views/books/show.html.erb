@@ -5,6 +5,8 @@
   <%= @book.code %>
 </p>
 
+<p><%= image_tag @book.cover.url(:medium) %></p>
+
 <p>
   <strong>Isbn:</strong>
   <%= @book.isbn %>
