@@ -1,10 +1,9 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  has_and_belongs_to_many :authors
   belongs_to :genre
   belongs_to :publisher
   has_many :trips
 
-  validates :author, presence: true
   validates :genre, presence: true
   validates :publisher, presence: true
   validates :code, presence: true

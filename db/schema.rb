@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171222190956) do
+ActiveRecord::Schema.define(version: 20171226194632) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -23,10 +23,15 @@ ActiveRecord::Schema.define(version: 20171222190956) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "authors_books", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "book_id", null: false
+    t.bigint "author_id", null: false
+    t.index ["author_id", "book_id"], name: "index_authors_books_on_author_id_and_book_id"
+  end
+
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "code", null: false
     t.string "isbn"
-    t.bigint "author_id"
     t.bigint "genre_id"
     t.bigint "publisher_id"
     t.string "title"
@@ -43,7 +48,6 @@ ActiveRecord::Schema.define(version: 20171222190956) do
     t.string "cover_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["code"], name: "index_books_on_code"
     t.index ["genre_id"], name: "index_books_on_genre_id"
     t.index ["isbn"], name: "index_books_on_isbn"
@@ -103,7 +107,6 @@ ActiveRecord::Schema.define(version: 20171222190956) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "books", "authors"
   add_foreign_key "books", "genres"
   add_foreign_key "books", "publishers"
   add_foreign_key "trips", "books"
