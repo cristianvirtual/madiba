@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20171222190956) do
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.boolean "active"
-    t.datetime "cover_updated_at"
-    t.integer "cover_file_size"
-    t.string "cover_content_type"
-    t.string "cover_file_name"
+    t.datetime "photo_updated_at"
+    t.integer "photo_file_size"
+    t.string "photo_content_type"
+    t.string "photo_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
