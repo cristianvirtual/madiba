@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :trips, foreign_key: :user_id
+  has_many :trips, foreign_key: :from_user
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

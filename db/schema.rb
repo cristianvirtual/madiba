@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221191110) do
+ActiveRecord::Schema.define(version: 20171222190956) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.boolean "active"
-    t.datetime "photo_updated_at"
-    t.integer "photo_file_size"
-    t.string "photo_content_type"
-    t.string "photo_file_name"
+    t.datetime "cover_updated_at"
+    t.integer "cover_file_size"
+    t.string "cover_content_type"
+    t.string "cover_file_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,6 +65,19 @@ ActiveRecord::Schema.define(version: 20171221191110) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trips", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "book_id"
+    t.bigint "from_user_id"
+    t.date "check_in"
+    t.boolean "validated"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_trips_on_book_id"
+    t.index ["from_user_id"], name: "index_trips_on_from_user_id"
+    t.index ["user_id"], name: "index_trips_on_user_id"
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -93,4 +106,7 @@ ActiveRecord::Schema.define(version: 20171221191110) do
   add_foreign_key "books", "authors"
   add_foreign_key "books", "genres"
   add_foreign_key "books", "publishers"
+  add_foreign_key "trips", "books"
+  add_foreign_key "trips", "users"
+  add_foreign_key "trips", "users", column: "from_user_id"
 end
