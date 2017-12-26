@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  require 'net/http'
+
   belongs_to :author
   belongs_to :genre
   belongs_to :publisher
