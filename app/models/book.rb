@@ -8,6 +8,7 @@ class Book < ApplicationRecord
   validates :publisher, presence: true
   validates :code, presence: true
   validates :title, presence: true
+  validates :volume, :edition, :pages, numericality: { greater_than: 0 }
 
   default_scope { order(title: :asc) }
 
