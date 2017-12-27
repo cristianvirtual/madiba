@@ -14,17 +14,19 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author %>
+  <% @book.authors.each do |a| %>
+    <%= a.name %>
+  <% end %>
 </p>
 
 <p>
   <strong>Genre:</strong>
-  <%= @book.genre %>
+  <%= @book.genre.name %>
 </p>
 
 <p>
   <strong>Publisher:</strong>
-  <%= @book.publisher %>
+  <%= @book.publisher.name %>
 </p>
 
 <p>
