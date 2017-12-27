@@ -27,9 +27,11 @@
       <tr>
         <td><%= book.code %></td>
         <td><%= book.isbn %></td>
-        <td><%= book.author %></td>
-        <td><%= book.genre %></td>
-        <td><%= book.publisher %></td>
+        <% book.authors.each do |a| %>
+          <td> <%= a.name %></td>
+        <% end %>
+        <td><%= book.genre.name %></td>
+        <td><%= book.publisher.name %></td>
         <td><%= book.title %></td>
         <td><%= book.serie_title %></td>
         <td><%= book.volume %></td>
