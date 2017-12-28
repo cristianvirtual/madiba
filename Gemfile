@@ -34,6 +34,10 @@ gem 'devise'
 gem 'paperclip', '~> 5.1'
 gem 'omniauth-facebook'
 
+#generate barcode & QR
+gem 'barby'
+#gem 'chunky_png'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
