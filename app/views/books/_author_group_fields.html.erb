@@ -1,0 +1,4 @@
+<div class="nested-fields">
+<%= f.label :author_id %>
+<%= f.collection_select :author_id, Author.active, :id, :name %>
+</div>

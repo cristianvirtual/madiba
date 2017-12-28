@@ -22,8 +22,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :author_id %>
-    <%= form.collection_select :author_id, Author.active, :id, :name %>
+    <%= form.fields_for :author_groups do |a| %>
+      <%= render 'author_group_fields', f: a %>
+    <% end %>
+    <%= link_to_add_association "Agregar Autor", form, :author_groups %>
   </div>
 
   <div class="field">

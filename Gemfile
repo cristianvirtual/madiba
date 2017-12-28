@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'paperclip', '~> 5.1'
 gem 'omniauth-facebook'
+gem 'cocoon'
 
 #generate barcode & QR
 gem 'barby'

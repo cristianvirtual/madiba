@@ -1,8 +1,11 @@
 class Book < ApplicationRecord
-  has_and_belongs_to_many :authors
+  has_many :author_groups, inverse_of: :book
+  has_many :authors, through: :author_groups
   belongs_to :genre
   belongs_to :publisher
   has_many :trips
+
+  accepts_nested_attributes_for :author_groups, reject_if: :all_blank, allow_destroy: true
 
   validates :genre, presence: true
   validates :publisher, presence: true
