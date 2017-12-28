@@ -22,4 +22,8 @@ class Book < ApplicationRecord
 
   scope :active, -> { where(active: 1) }
   scope :by_title, ->(title) { where("title LIKE ?", "%#{title}%")}
+
+  def self.search(search)
+    joins(:genre).joins(:authors).where("title LIKE ? OR isbn LIKE ? OR authors.name LIKE ? OR genres.name LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end
