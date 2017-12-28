@@ -5,7 +5,6 @@ class Book < ApplicationRecord
   has_many :trips
 
   validates :genre, presence: true
-  validates :publisher, presence: true
   validates :code, presence: true
   validates :title, presence: true
   validates :volume, :edition, :pages, numericality: { greater_than: 0 }
