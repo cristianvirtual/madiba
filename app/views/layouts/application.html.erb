@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <title>Madiba</title>
   <%= csrf_meta_tags %>
+=======
+  <head>
+    <title>Madiba</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="https://use.fontawesome.com/8606cf2d39.js"></script>
+  </head>
+>>>>>>> add home view
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,20 +22,7 @@
   <script src="https://use.fontawesome.com/8606cf2d39.js"></script>
 </head>
   <body>
-    <div>
-      <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "" %>
-          <%= submit_tag "Search", :name => nil %>
-      <% end %>
-    </div>
-
-  <% if user_signed_in? %>
-      <%= link_to "Edit profile", edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-  <% else %>
-      <%= link_to "Sign up", new_user_registration_path  %> |
-      <%= link_to "Login", new_user_session_path  %>
-  <% end %>
+    <%= render 'layouts/header' %>
     <%= render 'layouts/notice' %>
     <%= yield %>
   </body>
