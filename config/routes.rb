@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :trips
-  resources :books
+  resources :books, param: :code do
+    resources :trips
+  end
   resources :genres
   resources :publishers
   resources :authors

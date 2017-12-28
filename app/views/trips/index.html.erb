@@ -22,9 +22,9 @@
         <td><%= trip.from_user %></td>
         <td><%= trip.check_in %></td>
         <td><%= trip.validated %></td>
-        <td><%= link_to 'Show', trip %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', book_trip_path(trip.book.code, trip.id) %></td>
+        <td><%= link_to 'Edit', edit_book_trip_path(trip.book.code, trip.id) %></td>
+        <td><%= link_to 'Destroy', book_trip_path(trip.book.code, trip.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Trip', new_trip_path %>
+<%= link_to 'New Trip', new_book_trip_path %>
