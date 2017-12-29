@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-container">
+    <h3>Coincidencias para ""</h3>
+    <div class="row">
+      <% @trips.each do |trip| %>
+          <div class="col-lg-3">
+            <div class="results-book-card">
+              <div class="book-img">
+                <%= image_tag trip.book.cover.url(:medium), class: 'book-cover' %>
+              </div>
+              <div class="book-info">
+                <span class="title"><%= trip.book.title %></span>
+                <span class="author"><%= trip.book.authors.name %></span>
+                <span class="genre"><%= trip.book.genre.name %></span>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <hr>
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Anterior</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Última</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

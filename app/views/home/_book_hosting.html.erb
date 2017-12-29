@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-container">
+    <h3>Mis libros alojados</h3>
+    <% @trips.each do |trip| %>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="book-card">
+              <div class="book-img">
+                <%= image_tag trip.book.cover.url(:medium), class: 'book-cover' %>
+              </div>
+              <div class="book-info">
+                <span class="title"><a href=""><%= trip.book.title %></a></span>
+                <span class="author"><a href=""><%= trip.book.authors.name %></a></span>
+                <span class="genre"><a href=""><%= trip.book.genre.name %></a></span>
+                <span class="abstract"><%= trip.book.abstract %></span>
+                <span class="hold-time">341 días de visita</span>
+                <span class="previous-hosts">89 anfitriones anteriores</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+    <% end %>
+  </div>
+</div>

@@ -24,6 +24,13 @@
   <body>
     <%= render 'layouts/header' %>
     <%= render 'layouts/notice' %>
-    <%= yield %>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
