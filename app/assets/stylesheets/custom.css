@@ -1,0 +1,285 @@
+body {
+	background: #f5f5f5;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-top:70px;
+}
+
+h3 {
+	font-size: 20px;
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding-bottom:10px;
+	border-bottom:1px solid #efefef;
+}
+img {max-width: 100%;}
+hr.flat {
+	border-bottom: 1px solid #000;
+	margin:0;
+
+}
+.navbar-madiba {
+	background: #755c86;
+} 
+.navbar a{
+	color:#fff;
+}
+.transfer-request {
+	border:1px solid #000;
+	display: table-row;
+}
+.transfer-request-container {
+	margin-bottom: 20px;
+}
+.transfer-request-img{
+	width: 30%;
+	display: table-cell;
+}
+.transfer-request-img img{
+	max-width: 100%;
+}
+.transfer-request-data {
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 20px;
+}
+.transfer-request-data ul{
+	list-style: none;
+	padding:0;
+	margin-bottom:40;
+}
+
+ul.transfer-request .book-cover {
+	max-width: 50px;
+
+}
+
+.user-presentation {
+	text-align: center;
+}
+.user-avatar {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	overflow:hidden;
+	margin: 0 auto;
+	margin-bottom: 10px
+}
+.user-avatar img{
+	width: 100%;
+	height: 100%;
+}
+.wrapper {
+	margin:0 auto;
+	/*margin-top:70px;*/
+}
+
+.card {
+	background: white;
+	margin-bottom: 30px;
+	border-radius: 4px;
+}
+.card-container {
+	padding:20px;
+}
+
+/*text*/
+.quote {
+	font-style: italic;
+	font-weight: 300
+}
+
+/*dev styles*/
+.dev-tips *{
+	font-size: 10px!important;
+
+}
+
+/*book card*/
+.book-card, .book-profile, .timeline-card, .timeline-user {
+	width: 100%;
+	-ms-box-orient: horizontal;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: flex-start;
+	align-items: flex-start; 
+}
+.book-card a {
+	text-decoration: none;
+	color:inherit;
+}
+.book-card a:hover {
+	opacity: .7;
+}
+.book-img {
+	width:120px;
+	display: inline-block;
+	margin-right: 20px
+}
+.book-card img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.book-info *{
+	display: block;
+	color:#777;
+}
+.title{
+	font-size: 2em;
+	color:#000;
+}
+.author{
+	font-size: 1.3em
+}
+.genre{
+	margin-bottom: 10px
+}
+.abstract {
+
+}
+.results-book-card{
+	margin-bottom: 20px
+}
+.results-book-card .book-img{
+	margin-bottom: 10px;
+}
+.results-book-card .book-info .title{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.results-book-card .book-info .author{
+	font-size: 13px;
+}
+.results-book-card .book-info .genre{
+	font-size: 13px;
+}
+.book-profile .book-img {
+	width:500px;
+	display: inline-block;
+}
+
+.book-profile .book-img img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/*timeline*/
+.timeline-container {
+	/*border:1px solid #000;*/
+	
+}
+.timeline-card {
+	/*border:1px solid red;*/
+	padding:6px 10px;
+	margin-bottom: 20px;
+	background: #f5f5f5;
+	border-radius: 4px;
+	position: relative;
+}
+.timeline-card:before {
+	position: absolute;
+	content: '';
+	height:10px;
+	width: 1px;
+	background: black;
+	bottom: -14px;
+	left: 50%
+}
+.timeline-card:last-child:before {
+	display: none;
+}
+.timeline-card:last-child {
+	margin-bottom: 0
+}
+.timeline-date {
+	width: 40px;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right:1px solid #e7e7e7;
+}
+.timeline-date .year {
+	font-size: 14px;
+	line-height: 12px
+}
+.timeline-date .day {
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 30px;
+}
+.timeline-date .month {
+	font-size: 18px;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+.timeline-user {
+
+}
+.timeline-user-img {
+	width: 60px;
+	height:60px;
+	margin-right: 10px;
+}
+.timeline-user-img img{
+	max-width: 100%;
+	border-radius:50%;
+}
+.timeline-user-data {
+	display: inline-block;
+}
+.timeline-user-data .user-name {
+	display: block
+}
+.timeline-user-data .user-city {
+	display: block
+}
+.timeline-user-data .user-stats {
+	display: block;
+	font-weight: lighter;
+	color:#bbb;
+}
+
+/*pagination*/
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	background-color: #745c86;
+	border-color: #745c86;
+}
+.pagination>li>a, .pagination>li>span {
+	color: #745c86;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+	color: #745c86;
+}
+
+/*login*/
+
+.main-login{
+	background-color: #fff;
+	border-radius: 4px;
+
+}
+.main-login .actions {
+	margin-bottom: 20px;
+}
+
+.main-center{
+	margin-top: 30px;
+	margin: 0 auto;
+	max-width: 400px;
+	padding: 20px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+
+/*custom-bootstrap*/
