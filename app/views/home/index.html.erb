@@ -1,6 +1,8 @@
 <div class="col-lg-3">
   <!-- bloque de usuario -->
+  <% if user_signed_in? %>
   <%= render 'user_card' %>
+  <% end %>
   <!-- bloque reqyest -->
   <%= render 'book_request' %>
 </div>
