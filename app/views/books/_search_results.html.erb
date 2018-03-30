@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-container">
+    <h3>Coincidencias para: <i>"<%= params[:search] %>"</i></h3>
+    <div class="row">
+      <% @books.each do |book| %>
+          <div class="col-lg-3">
+            <div class="results-book-card">
+              <div class="book-img">
+                <%= image_tag book.cover.url(:medium), class: 'book-cover' %>
+              </div>
+              <div class="book-info">
+                <span class="title"><%= book.title %></span>
+                <span class="author"><%= show_authors book %></span>
+                <span class="genre"><%= book.genre.name %></span>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <hr>
+    <%= paginate @books %>
+  </div>
+</div>

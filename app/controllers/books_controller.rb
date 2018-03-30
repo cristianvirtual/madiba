@@ -10,6 +10,7 @@ class BooksController < ApplicationController
     else
       @books = Book.all.order("created_at DESC")
     end
+    @books = @books.page params[:page]
   end
 
   # GET /books/1

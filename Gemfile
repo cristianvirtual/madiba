@@ -34,6 +34,7 @@ gem 'devise'
 gem 'paperclip', '~> 5.1'
 gem 'omniauth-facebook'
 gem 'cocoon'
+gem 'kaminari', '~> 1.1'
 
 #generate barcode & QR
 gem 'barby'
